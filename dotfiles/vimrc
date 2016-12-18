@@ -1,0 +1,133 @@
+" Set encoding
+set encoding=utf-8
+
+" Use pathogen
+execute pathogen#infect()
+
+" GUI
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h12
+" set guifont=Monaco\ 10 "\ Consola\ 10\ bitstream\ vera\ sans\ mono\ 14
+" set antialias                     " MacVim: smooth fonts.
+" set encoding=utf-8                " Use UTF-8 everywhere.
+" set guioptions-=T                 " Hide toolbar.
+" set background=dark               " Background.
+" set go-=m go-=T go-=l go-=L go-=r go-=R go-=b go-=F
+
+" Turn on line numbering
+set nu
+
+" Enable mouse
+set mouse=a
+
+" Turn on syntax highlighting
+syntax on
+
+" Show typing command
+set showcmd
+
+" Automatical indentation
+filetype indent on
+set autoindent
+
+" Autocomplete with omni function
+filetype plugin on
+set ofu=syntaxcomplete
+
+" no wrap
+set nowrap
+
+" Tab = 2 spaces
+set tabstop=2
+
+" Space for indentation
+set shiftwidth=2
+
+" Tab to spaces
+set expandtab
+
+" Show current line number
+set ruler
+
+" Case insensitive search
+set ic
+
+" Highligh search
+set hls
+
+" Show partial match
+set is
+
+" Background
+set background=dark
+
+" Set Colorscheme
+color dracula
+
+
+" leaderkey
+let mapleader = ","
+
+" show buffer list
+nnoremap <leader><Space> :buffers<CR>:buffer<Space>
+
+" rspec 2 key binding
+nmap <F5> :!be rspec --no-color %<CR>
+
+" NERDTree key binding
+nmap <silent> <c-n> :NERDTreeToggle<CR>
+" # show editing file in NERDTree
+nmap <leader>l :NERDTreeFind<CR>
+" ignore temporary file listing in NERDTree
+let NERDTreeIgnore=['.swp$', '\~$', '.bundle']
+
+" Navigate windows with ctrl direction
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+" disable arrow keys
+noremap  <Up> <Nop>
+noremap  <Down> <Nop>
+noremap  <Left> <Nop>
+noremap  <Right> <Nop>
+
+
+" Go to definition
+nmap <F6> g*<CR>
+
+" Search
+nmap <F3> :execute " grep -srnw --binary-files=without-match --exclude-dir={bin,log,.{hg,git,un~,swp}} . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+
+" Folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+" BufExplorer settings
+nnoremap <leader>f :bn<CR>
+nnoremap <leader>b :bp<CR>
+
+" Close xml tag [Ctrl-x Ctrl-o doesn't work]
+" inoremap <lt>/ </<C-X><C-O>
+
+" irb interactive_editor
+if has("autocmd")
+  " Restore cursor position
+  autocmd BufReadPost * 
+    \ if line("'\"") > 1 && line("'\"") <= line("$") | 
+    \   exe "normal! g`\"" |
+    \ endif
+endif
+
+" vim-rspec
+let g:rspec_runner = "os_x_iterm2"
+let g:rspec_command="!bundle exec rspec {spec}"
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>T :call RunAllSpecs()<CR>
+
+" vim-jsx configuration
+let g:jsx_ext_required = 0
