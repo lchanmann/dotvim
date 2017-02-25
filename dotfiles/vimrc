@@ -132,5 +132,12 @@ endif
 " map <Leader>l :call RunLastSpec()<CR>
 " map <Leader>T :call RunAllSpecs()<CR>
 
+" run-spec.vim
+nnoremap <leader>t :RunSpec<CR>
+nnoremap <leader>r :RunSpecLine<CR>
+nnoremap <leader>e :RunSpecLastRun<CR>
+nnoremap <leader>cr :RunSpecCloseResult<CR>
+
+
 " vim-jsx configuration
 let g:jsx_ext_required = 0
