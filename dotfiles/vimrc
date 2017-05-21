@@ -14,7 +14,7 @@ execute pathogen#infect()
 " set go-=m go-=T go-=l go-=L go-=r go-=R go-=b go-=F
 
 " Backspace key
-set backspace=2
+set backspace=indent,eol,start
 
 " Turn on line numbering
 set nu
@@ -48,8 +48,11 @@ set shiftwidth=2
 " Tab to spaces
 set expandtab
 
-" Show current line number
+" Show current line number and cursor position
 set ruler
+
+" Highlight current line
+set cursorline
 
 " Case insensitive search
 set ic
@@ -60,12 +63,26 @@ set hls
 " Show partial match
 set is
 
+" Set terminal title
+set title
+
+" Show columns line
+set colorcolumn=81,141
+
+" Keep 3 lines when scrolling
+set scrolloff=3
+
 " Background
 set background=dark
 
 " Set Colorscheme
 color dracula
 
+" Set Python tab settings
+autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+" Use ruby syntax for thor script
+autocmd BufRead,BufNewFile *.thor set filetype=ruby
 
 " leaderkey
 let mapleader = ","
@@ -74,7 +91,7 @@ let mapleader = ","
 nnoremap <leader><Space> :buffers<CR>:buffer<Space>
 
 " rspec 2 key binding
-nmap <F5> :!be rspec --no-color %<CR>
+" nmap <F5> :!be rspec --no-color %<CR>
 
 " NERDTree key binding
 nmap <silent> <c-n> :NERDTreeToggle<CR>
@@ -95,12 +112,16 @@ noremap  <Down> <Nop>
 noremap  <Left> <Nop>
 noremap  <Right> <Nop>
 
+" Tab
+nnoremap <Tab>l gt
+nnoremap <Tab>h gT
+
 
 " Go to definition
 nmap <F6> g*<CR>
 
 " Search
-nmap <F3> :execute " grep -srnw --binary-files=without-match --exclude-dir={bin,log,.{hg,git,un~,swp}} . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+nmap <F3> :execute " grep -srnw --binary-files=without-match --exclude-dir={bin,log,.{hg,git,un~,swp,tags,node_modules}} . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
 " Folding settings
 set foldmethod=indent   "fold based on indent
