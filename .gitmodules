@@ -34,3 +34,6 @@
 [submodule "bundle/run-rspec.vim"]
 	path = bundle/run-rspec.vim
 	url = git@github.com:itmammoth/run-rspec.vim.git
+[submodule "bundle/django-plus"]
+	path = bundle/django-plus
+	url = git@github.com:tweekmonster/django-plus.vim.git
