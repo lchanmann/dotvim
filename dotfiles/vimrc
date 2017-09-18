@@ -70,7 +70,7 @@ set background=dark
 colorscheme dracula
 
 " Set Python tab settings
-autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " Use ruby syntax for thor script
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -92,7 +92,7 @@ nmap <silent> <c-n> :NERDTreeToggle<CR>
 " # show editing file in NERDTree
 nmap <leader>l :NERDTreeFind<CR>
 " ignore temporary file listing in NERDTree
-let NERDTreeIgnore=['.swp$', '\~$', '.bundle']
+let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__']
 
 " Navigate windows with ctrl direction
 noremap <C-J> <C-W>j
