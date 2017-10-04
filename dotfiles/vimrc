@@ -89,10 +89,14 @@ nnoremap <leader><Space> :buffers<CR>:buffer<Space>
 
 " NERDTree key binding
 nmap <silent> <c-n> :NERDTreeToggle<CR>
-" # show editing file in NERDTree
+" Show editing file in NERDTree
 nmap <leader>l :NERDTreeFind<CR>
-" ignore temporary file listing in NERDTree
+" Ignore temporary file listing in NERDTree
 let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__']
+
+" CtrlP configuration
+set wildignore+=*/.git/*,*/node_modules/*
+let g:ctrlp_max_depth = 8
 
 " Navigate windows with ctrl direction
 noremap <C-J> <C-W>j
@@ -155,5 +159,5 @@ nnoremap <leader>e :RunSpecLastRun<CR>
 nnoremap <leader>cr :RunSpecCloseResult<CR>
 
 
-" vim-jsx configuration
+" All JSX in normal JS files
 let g:jsx_ext_required = 0
