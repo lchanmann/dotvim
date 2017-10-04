@@ -37,3 +37,6 @@
 [submodule "bundle/django-plus"]
 	path = bundle/django-plus
 	url = git@github.com:tweekmonster/django-plus.vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
