@@ -1,8 +1,32 @@
 " Set encoding
 set encoding=utf-8
 
-" Use pathogen
-execute pathogen#infect()
+" " Use pathogen
+" execute pathogen#infect()
+
+" plugin manager
+call plug#begin('~/.vim/plugged')
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'aredridel/html5'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'junegunn/vader.vim',  { 'on': 'Vader', 'for': 'vader' }
+  Plug 'kien/ctrlp.vim'
+  Plug 'mileszs/ack.vim'
+  Plug 'mxw/vim-jsx'
+  Plug 'pangloss/vim-javascript'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+  Plug 'slim-template/vim-slim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-projectionist'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rake'
+  Plug 'tpope/vim-surround'
+  Plug 'tweekmonster/django-plus.vim'
+  Plug 'valloric/youcompleteme'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 
 " Backspace key
 set backspace=indent,eol,start
@@ -174,3 +198,12 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
+" Ag or Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+  cnoreabbrev ag Ack!
+endif

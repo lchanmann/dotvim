@@ -5,5 +5,6 @@ endif
 set guifont=Monaco:h12
 set antialias                     " MacVim: smooth fonts.
 set guioptions-=T                 " Hide toolbar.
-set background=dark               " Background.
+" set background=light               " Background.
+" colorscheme solarized
 set go-=m go-=T go-=l go-=L go-=r go-=R go-=b go-=F
