@@ -9,13 +9,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'altercation/vim-colors-solarized'
   Plug 'aredridel/html5'
   Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'junegunn/goyo.vim'
   Plug 'junegunn/vader.vim',  { 'on': 'Vader', 'for': 'vader' }
   Plug 'kien/ctrlp.vim'
+  Plug 'majutsushi/tagbar'
   Plug 'mileszs/ack.vim'
   Plug 'mxw/vim-jsx'
+  Plug 'nathanaelkane/vim-indent-guides'
   Plug 'pangloss/vim-javascript'
   Plug 'scrooloose/nerdcommenter'
-  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+  Plug 'scrooloose/nerdtree' ", { 'on': 'NERDTreeToggle' }
   Plug 'slim-template/vim-slim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-projectionist'
@@ -200,10 +203,20 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " Ag or Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
   cnoreabbrev ag Ack!
 endif
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" Goyo
+let g:goyo_width = 135
+let g:goyo_linenr = 1
+
+" Indent guides
+nnoremap <leader>ig :IndentGuidesToggle<CR>
