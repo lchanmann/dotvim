@@ -127,6 +127,7 @@ nmap <leader>l :NERDTreeFind<CR>
 let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__']
 
 " CtrlP configuration
+nmap <leader>. :CtrlPTag<CR>
 set wildignore+=*/.git/*,*/node_modules/*
 let g:ctrlp_max_depth = 8
 
