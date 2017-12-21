@@ -90,7 +90,7 @@ set is
 set title
 
 " Show columns line
-set colorcolumn=81,141
+set colorcolumn=81,121,161
 
 " Keep 3 lines when scrolling
 set scrolloff=3
