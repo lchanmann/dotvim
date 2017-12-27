@@ -124,12 +124,16 @@ nmap <silent> <c-n> :NERDTreeToggle<CR>
 " Show editing file in NERDTree
 nmap <leader>l :NERDTreeFind<CR>
 " Ignore temporary file listing in NERDTree
-let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__']
+let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__', '.pyc$']
 
 " CtrlP configuration
 nmap <leader>. :CtrlPTag<CR>
 set wildignore+=*/.git/*,*/node_modules/*
 let g:ctrlp_max_depth = 8
+let g:ctrlp_custom_ignore = {
+  \   'dir':  '\v[\/]\.(git|hg|svn)$',
+  \   'file': '\v\.(pyc|swp|so)$'
+  \ }
 
 " Navigate windows with ctrl direction
 noremap <C-J> <C-W>j
