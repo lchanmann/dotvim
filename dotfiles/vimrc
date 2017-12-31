@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rake'
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
   Plug 'tweekmonster/django-plus.vim'
   Plug 'valloric/youcompleteme'
   Plug 'vim-airline/vim-airline'
