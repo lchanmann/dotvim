@@ -102,8 +102,8 @@ set background=dark
 " Set Colorscheme
 colorscheme dracula
 
-" Set Python tab settings
-autocmd FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+" Set C/C++/Java/Python tab settings
+autocmd FileType c,h,cc,cpp,java,python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " Use ruby syntax for thor script
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -125,7 +125,7 @@ nmap <silent> <c-n> :NERDTreeToggle<CR>
 " Show editing file in NERDTree
 nmap <leader>l :NERDTreeFind<CR>
 " Ignore temporary file listing in NERDTree
-let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__', '.pyc$']
+let NERDTreeIgnore=['.swp$', '\~$', '.bundle', '__pycache__', '.pyc$', '.class']
 
 " CtrlP configuration
 nmap <leader>. :CtrlPTag<CR>
@@ -133,7 +133,7 @@ set wildignore+=*/.git/*,*/node_modules/*
 let g:ctrlp_max_depth = 8
 let g:ctrlp_custom_ignore = {
   \   'dir':  '\v[\/]\.(git|hg|svn)$',
-  \   'file': '\v\.(pyc|swp|so)$'
+  \   'file': '\v\.(pyc|swp|so|class)$'
   \ }
 
 " Navigate windows with ctrl direction
