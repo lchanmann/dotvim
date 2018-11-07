@@ -79,8 +79,8 @@ set ruler
 " Highlight current line
 set cursorline
 
-" Case insensitive search
-set ic
+" Smart case search
+set smartcase " [ic, noic, smartcase]
 
 " Highligh search
 set hls
