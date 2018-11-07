@@ -1,7 +1,7 @@
 " Set encoding
 set encoding=utf-8
 
-" " Use pathogen
+" Use pathogen
 " execute pathogen#infect()
 
 " plugin manager
@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'dracula/vim', { 'as': 'dracula' }
   " Plug 'junegunn/vader.vim',  { 'on': 'Vader', 'for': 'vader' }
   Plug 'kchmck/vim-coffee-script'
+  Plug 'keith/swift.vim'
   Plug 'kien/ctrlp.vim'
   Plug 'majutsushi/tagbar'
   Plug 'mileszs/ack.vim'
