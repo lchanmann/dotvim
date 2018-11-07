@@ -8,6 +8,7 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
   Plug 'amadeus/vim-mjml'
   Plug 'aredridel/html5'
+  Plug 'colepeters/spacemacs-theme.vim'
   Plug 'dracula/vim', { 'as': 'dracula' }
   " Plug 'junegunn/vader.vim',  { 'on': 'Vader', 'for': 'vader' }
   Plug 'kchmck/vim-coffee-script'
