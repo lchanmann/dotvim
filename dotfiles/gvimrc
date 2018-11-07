@@ -2,10 +2,11 @@ if has("mouse")
   set mouse=a
 endif
 
-set guifont=Monaco:h11
+set guifont=Fira\ Code:h13
+set linespace=2                   " Wider linespace is good for Fira Code font
 set antialias                     " MacVim: smooth fonts.
 set guioptions-=T                 " Hide toolbar.
 " set background=light               " Background.
-" colorscheme solarized
-set transparency=4
+colorscheme spacemacs-theme
+" set transparency=4
 set go-=m go-=T go-=l go-=L go-=r go-=R go-=b go-=F
